@@ -1,7 +1,5 @@
-console.log("initial commit");
+export { default as Condition } from "./core/Condition";
+export { default as IfElse } from "./core/IfElse";
 
-const hello = (params: string) => {
-  console.log("hello" + params);
-};
-
-export default hello;
+export { default as DropdownGroup } from "./core/fieldTypes/DropdownGroup";
+export { default as InputGroup } from "./core/fieldTypes/InputGroup";
