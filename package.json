@@ -1,0 +1,38 @@
+{
+  "name": "semantic-form",
+  "version": "1.0.0",
+  "description": "An useful api for building form using Final Forms and Semantic UI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gsaileshkumar/semantic-form.git"
+  },
+  "keywords": [
+    "forms",
+    "final-form",
+    "react-final-form",
+    "semantic-ui",
+    "semantic-forms",
+    "semantic-form"
+  ],
+  "author": "gsaileshkumar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gsaileshkumar/semantic-form/issues"
+  },
+  "homepage": "https://github.com/gsaileshkumar/semantic-form#readme",
+  "dependencies": {
+    "@types/node": "^12.7.12",
+    "@types/react": "^16.9.5",
+    "final-form": "^4.18.5",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-final-form": "^6.3.0",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.88.1",
+    "typescript": "^3.6.4"
+  }
+}
