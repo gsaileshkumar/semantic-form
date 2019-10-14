@@ -36,4 +36,4 @@ const IfElseConditionFC: IfElseConditionFC = ({
   );
 };
 
-export default IfElseCondition;
+export default IfElseConditionFC;
