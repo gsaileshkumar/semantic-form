@@ -11,10 +11,26 @@ export default {
     ...Object.keys(pkg.dependencies || {}),
     ...Object.keys(pkg.peerDependencies || {})
   ],
-  output: {
-    file: "dist/bundle.cjs.js",
-    format: "cjs"
-  },
+  output: [
+    {
+      file: "dist/bundle.cjs.js",
+      format: "cjs"
+    },
+    {
+      file: "dist/bundle.es.js",
+      format: "es"
+    },
+    {
+      file: "dist/bundle.umd.js",
+      format: "umd",
+      name: "SemanticForm"
+    },
+    {
+      file: "dist/bundle.iife.js",
+      format: "iife",
+      name: "SemanticForm"
+    }
+  ],
   plugins: [
     resolve({ extensions }),
     babel({
