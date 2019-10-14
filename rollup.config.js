@@ -24,12 +24,12 @@ export default {
   ],
   plugins: [
     resolve({ extensions }),
+    typescript({
+      typescript: require("typescript")
+    }),
     babel({
       extensions,
       exclude: "node_modules/**"
-    }),
-    typescript({
-      typescript: require("typescript")
     }),
     terser()
   ]

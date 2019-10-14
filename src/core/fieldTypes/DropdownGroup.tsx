@@ -24,7 +24,28 @@ const DropdownGroup: DropdownGroupType = ({
         ) => {
           input.onChange(data.value);
         };
-        return <Dropdown {...Dropdown} onChange={onChangeHandler} {...rest} />;
+        const onFocusHandler = (
+          event: React.SyntheticEvent<HTMLElement, Event>,
+          data: DropdownProps
+        ) => {
+          input.onFocus();
+        };
+        const onBlurHandler = (
+          event: React.SyntheticEvent<HTMLElement, Event>,
+          data: DropdownProps
+        ) => {
+          input.onBlur();
+        };
+        return (
+          <Dropdown
+            onFocus={onFocusHandler}
+            onChange={onChangeHandler}
+            onBlur={onBlurHandler}
+            value={input.value}
+            name={input.name}
+            {...rest}
+          />
+        );
       }}
     </Field>
   );

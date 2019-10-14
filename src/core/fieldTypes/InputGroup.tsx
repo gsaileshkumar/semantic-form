@@ -22,7 +22,7 @@ const InputGroup: InputGroupType = ({ name, readonly, onChange, ...rest }) => {
         return (
           <div style={{ display: "flex", flexDirection: "column" }}>
             <label htmlFor={name}>{name}</label>
-            <Input {...input} onChange={onChangeHandler} {...rest} />
+            <Input {...rest} {...input} onChange={onChangeHandler} />
           </div>
         );
       }}
