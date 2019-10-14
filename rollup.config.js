@@ -2,6 +2,7 @@ import resolve from "rollup-plugin-node-resolve";
 import babel from "rollup-plugin-babel";
 import pkg from "./package.json";
 import typescript from "rollup-plugin-typescript2";
+import { terser } from "rollup-plugin-terser";
 
 const extensions = [".js", ".jsx", ".ts", ".tsx"];
 
@@ -39,6 +40,7 @@ export default {
     }),
     typescript({
       typescript: require("typescript")
-    })
+    }),
+    terser()
   ]
 };
