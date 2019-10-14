@@ -20,16 +20,6 @@ export default {
     {
       file: "dist/bundle.es.js",
       format: "es"
-    },
-    {
-      file: "dist/bundle.umd.js",
-      format: "umd",
-      name: "SemanticForm"
-    },
-    {
-      file: "dist/bundle.iife.js",
-      format: "iife",
-      name: "SemanticForm"
     }
   ],
   plugins: [

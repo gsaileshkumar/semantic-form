@@ -1,15 +1,11 @@
 import React, { ReactNode } from "react";
 import { Field } from "react-final-form";
+import { ConditionTypes } from "./Condition";
 
 interface IfElseProps {
   when: string;
   renderOnTrue?: ReactNode;
   renderOnFalse?: ReactNode;
-}
-
-interface ConditionTypes {
-  condition?: (value: any) => Boolean;
-  is?: any;
 }
 
 type Props = IfElseProps & ConditionTypes;

@@ -6,7 +6,7 @@ interface ConditionProps {
   children: ReactElement;
 }
 
-interface ConditionTypes {
+export interface ConditionTypes {
   condition?: (value: any) => Boolean;
   is?: any;
 }
