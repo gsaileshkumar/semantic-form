@@ -1,4 +1,11 @@
 language: node_js
 node_js:
   - "stable"
-script: "npm run build"
+script:
+  - npm run build
+
+before_deploy:
+  - cd examples/demo-app
+
+deploy:
+  - npm run deploy

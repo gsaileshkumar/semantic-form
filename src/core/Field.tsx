@@ -1,14 +1,14 @@
 import { DropdownGroup, InputGroup } from "./fieldTypes";
+import { FieldProps } from "react-final-form";
 
 type FieldTypes = "dropdown" | "text";
 
-interface FieldProps {
+interface GenericFieldProps extends FieldProps<any, HTMLElement> {
   fieldType?: FieldTypes;
   required?: boolean;
-  name: string;
 }
 
-type FieldComponent = React.FC<FieldProps>;
+type FieldComponent = React.FC<GenericFieldProps>;
 
 const Field: FieldComponent = props => {
   const { fieldType } = props;
