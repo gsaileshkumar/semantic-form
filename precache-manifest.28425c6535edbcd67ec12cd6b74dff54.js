@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "25c4aefb507cab90980cfcefb1716a95",
+    "revision": "630063eff6c8da7f2f3718a3e26b0506",
     "url": "/semantic-form/index.html"
   },
   {
-    "revision": "1b640d6f5d85d98dfbbd",
+    "revision": "2b8eee5d07d76ef10c54",
     "url": "/semantic-form/static/css/main.b100e6da.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/semantic-form/static/js/2.3ead3133.chunk.js"
   },
   {
-    "revision": "1b640d6f5d85d98dfbbd",
-    "url": "/semantic-form/static/js/main.01585c77.chunk.js"
+    "revision": "2b8eee5d07d76ef10c54",
+    "url": "/semantic-form/static/js/main.8e2112f5.chunk.js"
   },
   {
     "revision": "5eb3ff4d055cabc99f3a",
