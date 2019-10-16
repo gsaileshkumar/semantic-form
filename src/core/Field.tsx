@@ -1,3 +1,4 @@
+import React from "react";
 import { DropdownGroup, InputGroup } from "./fieldTypes";
 import { FieldProps } from "react-final-form";
 
