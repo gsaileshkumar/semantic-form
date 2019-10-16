@@ -12,7 +12,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "tsc:watch": "tsc -w",
-    "build": "rimraf dist && rollup -c"
+    "build": "rimraf dist && rollup -c",
+    "lint:fix": "eslint src/**/*.{ts,tsx}"
   },
   "repository": {
     "type": "git",
@@ -52,6 +53,7 @@
     "@typescript-eslint/eslint-plugin": "^2.4.0",
     "@typescript-eslint/parser": "^2.4.0",
     "eslint": "^6.5.1",
+    "eslint-config-react": "^1.1.7",
     "eslint-plugin-react": "^7.16.0",
     "rimraf": "^3.0.0",
     "rollup": "^1.23.1",
