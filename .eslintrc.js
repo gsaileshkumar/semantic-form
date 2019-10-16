@@ -6,7 +6,10 @@ module.exports = {
   },
   extends: [
     "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended"
+    "react",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "prettier",
+    "prettier/@typescript-eslint"
   ],
   globals: {
     Atomics: "readonly",
@@ -20,6 +23,9 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: "module"
   },
-  plugins: ["react", "@typescript-eslint"],
-  rules: {}
+  plugins: ["@typescript-eslint", "react"],
+  rules: {
+    "react/prop-types": 0,
+    "no-unused-vars": 0
+  }
 };
