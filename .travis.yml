@@ -6,7 +6,7 @@ script:
 
 before_deploy:
   - cd examples/demo-app
-  - npm run deploy
+  - npm run build
 
 deploy:
   provider: pages
