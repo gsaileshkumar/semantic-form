@@ -3,13 +3,11 @@ language: node_js
 node_js:
   - "stable"
 
-cache:
-  npm: false
-
 script:
   - npm run build
 
 before_deploy:
+  - rimraf node_modules
   - cd examples/demo-app
   - npm run build
 
