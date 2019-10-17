@@ -15,11 +15,20 @@ before_deploy:
   - npm run storybook:build
 
 deploy:
-  provider: pages
-  # local_dir: examples/demo-app/build
-  local_dir: storybook-static
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN # Set in the settings page of your repository, as a secure variable
-  keep_history: true
-  on:
+  - provider: pages
+    name: gh-pages
+    # local_dir: examples/demo-app/build
+    local_dir: storybook-static
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN # Set in the settings page of your repository, as a secure variable
+    keep_history: true
+    on:
+      branch: master
+  - provider: npm
+    name: npm
+    email: $NPM_EMAIL
+    api_key: $NPM_TOKEN
+    skip_cleanup: true
+    on:
     branch: master
+    tags: true
