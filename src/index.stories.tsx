@@ -1,15 +1,34 @@
 import React from "react";
+import "semantic-ui-css/semantic.min.css";
+import { Form, Field } from "./index";
 
-const Button = ({ children }) => <button>{children}</button>;
+export const SimpleForm = () => {
+  const onSubmitHandler = values => {
+    console.log("values", values);
+  };
+  return (
+    <Form
+      onSubmit={onSubmitHandler}
+      render={({ submitting }) => {
+        return (
+          <>
+            <Field name="firstname" />
+            <Field name="lastname" />
+            <Field name="age" type="number" />
+            <Field
+              name="gender"
+              fieldType="dropdown"
+              options={[
+                { text: "Male", value: "male" },
+                { text: "Female", value: "female" }
+              ]}
+              selection
+            />
+          </>
+        );
+      }}
+    />
+  );
+};
 
-export default { title: "Button" };
-
-export const withText = () => <Button>Hello Button</Button>;
-
-export const withEmoji = () => (
-  <Button>
-    <span role="img" aria-label="so cool">
-      😀 😎 👍 💯
-    </span>
-  </Button>
-);
+export default { title: "Examples" };

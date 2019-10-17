@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/gsaileshkumar/semantic-form/issues"
   },
-  "homepage": "https://github.com/gsaileshkumar/semantic-form#readme",
+  "homepage": "https://gsaileshkumar.github.io/semantic-form",
   "dependencies": {
     "final-form": "^4.18.5",
     "react-final-form": "^6.3.0",
@@ -67,6 +67,7 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-terser": "^5.1.2",
     "rollup-plugin-typescript2": "^0.24.3",
+    "semantic-ui-css": "^2.4.1",
     "typescript": "^3.6.4"
   }
 }

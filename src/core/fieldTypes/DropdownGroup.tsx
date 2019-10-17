@@ -35,14 +35,17 @@ const DropdownGroup: DropdownGroupType = ({
           input.onBlur();
         };
         return (
-          <Dropdown
-            onFocus={onFocusHandler}
-            onChange={onChangeHandler}
-            onBlur={onBlurHandler}
-            value={input.value}
-            name={input.name}
-            {...rest}
-          />
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <label htmlFor={name}>{name}</label>
+            <Dropdown
+              onFocus={onFocusHandler}
+              onChange={onChangeHandler}
+              onBlur={onBlurHandler}
+              value={input.value}
+              name={input.name}
+              {...rest}
+            />
+          </div>
         );
       }}
     </Field>
