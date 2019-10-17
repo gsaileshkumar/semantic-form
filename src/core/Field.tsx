@@ -4,12 +4,23 @@ import { FieldProps } from "react-final-form";
 
 type FieldTypes = "dropdown" | "text";
 
-interface GenericFieldProps extends FieldProps<any, HTMLElement> {
-  fieldType?: FieldTypes;
-  required?: boolean;
+interface AnyObject {
+  [key: string]: any;
 }
 
-type FieldComponent = React.FC<GenericFieldProps>;
+export interface GenericFieldProps {
+  name: string;
+  fieldType?: FieldTypes;
+  required?: boolean;
+  readOnly?: boolean;
+}
+
+interface GenericFormFieldProps
+  extends FieldProps<any, HTMLElement>,
+    GenericFieldProps,
+    AnyObject {}
+
+type FieldComponent = React.FC<GenericFormFieldProps>;
 
 const Field: FieldComponent = props => {
   const { fieldType } = props;

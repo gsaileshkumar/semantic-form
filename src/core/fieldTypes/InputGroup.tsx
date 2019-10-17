@@ -1,15 +1,13 @@
 import React from "react";
 import { Input, InputProps, InputOnChangeData } from "semantic-ui-react";
 import { Field } from "react-final-form";
+import { GenericFieldProps } from "../Field";
 
-interface InputGroupProps extends InputProps {
-  name: string;
-  readonly?: boolean;
-}
+interface InputGroupProps extends GenericFieldProps, InputProps {}
 
 type InputGroupType = React.FunctionComponent<InputGroupProps>;
 
-const InputGroup: InputGroupType = ({ name, readonly, onChange, ...rest }) => {
+const InputGroup: InputGroupType = ({ name, readOnly, onChange, ...rest }) => {
   return (
     <Field {...rest} name={name}>
       {({ input, meta }) => {

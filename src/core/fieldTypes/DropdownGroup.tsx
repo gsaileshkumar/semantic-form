@@ -1,17 +1,15 @@
 import React from "react";
 import { Dropdown, DropdownProps } from "semantic-ui-react";
 import { Field } from "react-final-form";
+import { GenericFieldProps } from "../Field";
 
-interface DropdownGroupProps extends DropdownProps {
-  name: string;
-  readonly?: boolean;
-}
+interface DropdownGroupProps extends GenericFieldProps, DropdownProps {}
 
 type DropdownGroupType = React.FunctionComponent<DropdownGroupProps>;
 
 const DropdownGroup: DropdownGroupType = ({
   name,
-  readonly,
+  readOnly,
   onChange,
   ...rest
 }) => {
