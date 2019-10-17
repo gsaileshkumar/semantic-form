@@ -1,6 +1,6 @@
 {
   "name": "semantic-form",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "An useful api for building form using Final Forms and Semantic UI",
   "main": "dist/bundle.cjs.js",
   "module": "dist/bundle.es.js",
