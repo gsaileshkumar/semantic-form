@@ -33,7 +33,13 @@ const SimpleForm = () => {
         return (
           <>
             <Field name="fullname" labelText="Full name" required />
-            <Field name="age" type="number" labelText="Age" required />
+            <Field
+              name="age"
+              type="number"
+              labelText="Age"
+              required
+              hint="Driving license required for adults (age > 18)"
+            />
             <Field
               name="gender"
               fieldType="dropdown"
@@ -45,7 +51,7 @@ const SimpleForm = () => {
               selection
             />
             <Condition when="age" condition={value => value > 18}>
-              <Field name="lisenceNo" labelText="Driving Lisence Number" />
+              <Field name="licenseNo" labelText="Driving license Number" />
             </Condition>
           </>
         );
@@ -66,6 +72,7 @@ Props you may want to specify include:
 - `required` - Checks the field for mandatory
 - `fieldType` - Type of the field. Supports Text, Dropdown, Radio \*\*In Development to support other types
 - `labelText` - Label for the field
+- `hint` - Hint text for the field
 
 #### Condition
 
