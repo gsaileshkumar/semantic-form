@@ -1,9 +1,8 @@
 import React from "react";
-import { DropdownGroup, InputGroup } from "./fieldTypes";
+import { Dropdown, Input, Radio } from "./fieldTypes";
 import { FieldProps } from "react-final-form";
 import { Errors } from "./constants";
 import { DEFAULT_FIELD_STYLE } from "./constants/DefaultStyles";
-import RadioGroup from "./fieldTypes/RadioGroup";
 import Error from "./Error";
 
 type ValueType = boolean | number | string | (boolean | number | string)[];
@@ -49,14 +48,14 @@ const Field: FieldComponent = props => {
     return validate && validate(value, allValues);
   };
 
-  let fieldComp = <InputGroup validate={fieldValidate} {...props} />;
+  let fieldComp = <Input validate={fieldValidate} {...props} />;
 
   switch (fieldType) {
     case "dropdown":
-      fieldComp = <DropdownGroup validate={fieldValidate} {...props} />;
+      fieldComp = <Dropdown validate={fieldValidate} {...props} />;
       break;
     case "radio":
-      fieldComp = <RadioGroup validate={fieldValidate} {...props} />;
+      fieldComp = <Radio validate={fieldValidate} {...props} />;
       break;
     case "text":
     default:
