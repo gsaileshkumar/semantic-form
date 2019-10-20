@@ -1,6 +1,6 @@
 # semantic-form
 
-[![Build Status](https://travis-ci.org/gsaileshkumar/semantic-form.svg?branch=master)](https://travis-ci.org/gsaileshkumar/semantic-form) [![npm](https://img.shields.io/npm/v/semantic-form)](https://www.npmjs.com/package/semantic-form) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/semantic-form) ![npm type definitions](https://img.shields.io/npm/types/semantic-form)
+[![Build Status](https://travis-ci.org/gsaileshkumar/semantic-form.svg?branch=master)](https://travis-ci.org/gsaileshkumar/semantic-form) [![npm](https://img.shields.io/npm/v/semantic-form)](https://www.npmjs.com/package/semantic-form) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/semantic-form) ![npm type definitions](https://img.shields.io/npm/types/semantic-form) ![NPM](https://img.shields.io/npm/l/semantic-form)
 
 A declarative form builder api for react apps using the power of [React Final form](https://github.com/final-form/react-final-form).
 
