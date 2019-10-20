@@ -20,7 +20,7 @@ Then use to build Forms like
 
 ```js
 import React from "react";
-import Select from "semantic-form";
+import { Form, Field, Condition } from "semantic-form";
 
 const SimpleForm = () => {
   const onSubmitHandler = values => {
