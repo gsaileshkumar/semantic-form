@@ -4,6 +4,7 @@ import { Field } from "react-final-form";
 interface ConditionProps {
   when: string;
   children: ReactElement;
+  resetOnFalse?: boolean;
 }
 
 export interface ConditionTypes {
@@ -15,7 +16,8 @@ const Condition: React.FC<ConditionProps & ConditionTypes> = ({
   children,
   condition,
   is,
-  when
+  when,
+  resetOnFalse = false
 }) => {
   return (
     <Field name={when}>
@@ -23,16 +25,19 @@ const Condition: React.FC<ConditionProps & ConditionTypes> = ({
         if (value === is || (condition && condition(value))) {
           return children;
         } else {
-          return React.Children.map(children, (child: React.ReactElement) => {
-            return (
-              <Field name={child.props.name}>
-                {({ input: { onChange } }) => {
-                  onChange(undefined);
-                  return null;
-                }}
-              </Field>
-            );
-          });
+          return (
+            resetOnFalse &&
+            React.Children.map(children, (child: React.ReactElement) => {
+              return (
+                <Field name={child.props.name}>
+                  {({ input: { onChange } }) => {
+                    onChange(undefined);
+                    return null;
+                  }}
+                </Field>
+              );
+            })
+          );
         }
       }}
     </Field>

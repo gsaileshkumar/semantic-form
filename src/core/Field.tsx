@@ -3,10 +3,11 @@ import { DropdownGroup, InputGroup } from "./fieldTypes";
 import { FieldProps } from "react-final-form";
 import { Errors } from "./constants";
 import { DEFAULT_FIELD_STYLE } from "./constants/DefaultStyles";
+import RadioGroup from "./fieldTypes/RadioGroup";
 
 type ValueType = boolean | number | string | (boolean | number | string)[];
 
-type FieldTypes = "dropdown" | "text";
+type FieldTypes = "radio" | "dropdown" | "text";
 
 interface AnyObject {
   [key: string]: any;
@@ -51,6 +52,10 @@ const Field: FieldComponent = props => {
   switch (fieldType) {
     case "dropdown":
       fieldComp = <DropdownGroup validate={fieldValidate} {...props} />;
+      break;
+    case "radio":
+      fieldComp = <RadioGroup validate={fieldValidate} {...props} />;
+      break;
     case "text":
     default:
   }

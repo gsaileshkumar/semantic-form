@@ -1,45 +1,7 @@
-import React from "react";
 import "semantic-ui-css/semantic.min.css";
-import { Form, Field } from "../src/index";
-import StoryWrapper, { ValuesComponent } from "./styles";
 
-export const SimpleForm = () => {
-  const onSubmitHandler = values => {
-    console.log("values", values);
-  };
-  return (
-    <StoryWrapper>
-      <Form
-        onSubmit={onSubmitHandler}
-        subscription={{
-          values: true,
-          submitting: true,
-          pristine: true,
-          invalid: true
-        }}
-        render={({ values }) => {
-          return (
-            <>
-              <Field name="firstname" labelText="First name" required />
-              <Field name="lastname" labelText="Last name" />
-              <Field name="age" type="number" labelText="Age" required />
-              <Field
-                name="gender"
-                fieldType="dropdown"
-                labelText="Gender"
-                options={[
-                  { text: "Male", value: "male" },
-                  { text: "Female", value: "female" }
-                ]}
-                selection
-              />
-              <ValuesComponent values={values} />
-            </>
-          );
-        }}
-      />
-    </StoryWrapper>
-  );
-};
+export { default as SimpleForm } from "./basic/SimpleExample";
+export { default as ConditionForm } from "./basic/ConditionExample";
+export { default as IfElseForm } from "./basic/IfElseExample";
 
 export default { title: "Basic Examples" };

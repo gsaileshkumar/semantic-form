@@ -12,7 +12,7 @@ type Props = IfElseProps & ConditionTypes;
 
 interface IfElseConditionFC extends React.FC<Props> {}
 
-const IfElseConditionFC: IfElseConditionFC = ({
+const IfElseCondition: IfElseConditionFC = ({
   when,
   condition,
   is,
@@ -32,4 +32,4 @@ const IfElseConditionFC: IfElseConditionFC = ({
   );
 };
 
-export default IfElseConditionFC;
+export default IfElseCondition;
