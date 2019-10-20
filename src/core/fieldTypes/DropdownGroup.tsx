@@ -1,9 +1,8 @@
 import React from "react";
-import { Dropdown, DropdownProps } from "semantic-ui-react";
 import { Field } from "react-final-form";
-import { GenericFieldProps } from "../Field";
+import { Dropdown, DropdownProps } from "semantic-ui-react";
 
-interface DropdownGroupProps extends GenericFieldProps, DropdownProps {}
+interface DropdownGroupProps extends DropdownProps {}
 
 type DropdownGroupType = React.FunctionComponent<DropdownGroupProps>;
 
@@ -15,7 +14,7 @@ const DropdownGroup: DropdownGroupType = ({
 }) => {
   return (
     <Field {...rest} name={name}>
-      {({ input, meta }) => {
+      {({ input, meta, ...others }) => {
         const onChangeHandler = (
           event: React.SyntheticEvent<HTMLElement, Event>,
           data: DropdownProps
@@ -35,17 +34,14 @@ const DropdownGroup: DropdownGroupType = ({
           input.onBlur();
         };
         return (
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <label htmlFor={name}>{name}</label>
-            <Dropdown
-              onFocus={onFocusHandler}
-              onChange={onChangeHandler}
-              onBlur={onBlurHandler}
-              value={input.value}
-              name={input.name}
-              {...rest}
-            />
-          </div>
+          <Dropdown
+            {...others}
+            onFocus={onFocusHandler}
+            onChange={onChangeHandler}
+            onBlur={onBlurHandler}
+            value={input.value}
+            name={input.name}
+          />
         );
       }}
     </Field>
