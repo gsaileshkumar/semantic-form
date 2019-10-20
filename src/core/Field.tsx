@@ -63,12 +63,12 @@ const Field: FieldComponent = props => {
   }
   return (
     <div style={DEFAULT_FIELD_STYLE}>
-      <label htmlFor={name}>
+      <label htmlFor={name} style={{ paddingBottom: 5 }}>
         {labelText ? labelText : name}
         {required ? " :*" : " :"}
       </label>
       {fieldComp}
-      <span style={{ color: "#adadad" }}>{hint}</span>
+      <span style={{ color: "#adadad", padding: "5px 0" }}>{hint}</span>
       <Error name={name} />
     </div>
   );

@@ -2,22 +2,40 @@ import React from "react";
 import { Field } from "react-final-form";
 import { Radio, RadioProps } from "semantic-ui-react";
 
-interface RadioGroupProps extends Omit<RadioProps, "type"> {}
+interface RadioGroupProps extends Omit<RadioProps, "type"> {
+  direction?: "vertical" | "horizontal";
+}
 
 type RadioGroupType = React.FunctionComponent<RadioGroupProps>;
 
-const RadioField = ({ options, value, ...rest }) => {
-  return options.map(option => (
-    <Radio
-      {...rest}
-      {...option}
-      label={option.text}
-      checked={value === option.value}
-    />
-  ));
+const RadioField = ({ options, value, direction, ...rest }) => {
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: direction === "vertical" ? "column" : "row"
+      }}
+    >
+      {options.map(option => (
+        <Radio
+          {...rest}
+          {...option}
+          style={{ ...rest.style, paddingRight: "1rem" }}
+          label={option.text}
+          checked={value === option.value}
+        />
+      ))}
+    </div>
+  );
 };
 
-const RadioGroup: RadioGroupType = ({ name, readOnly, options, ...rest }) => {
+const RadioGroup: RadioGroupType = ({
+  name,
+  readOnly,
+  direction,
+  options,
+  ...rest
+}) => {
   return (
     <Field {...rest} name={name}>
       {({ input, meta, ...others }) => {
@@ -48,6 +66,7 @@ const RadioGroup: RadioGroupType = ({ name, readOnly, options, ...rest }) => {
             onBlur={onBlurHandler}
             value={input.value}
             name={input.name}
+            direction={direction}
           />
         );
       }}
