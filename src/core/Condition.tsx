@@ -17,7 +17,7 @@ const Condition: React.FC<ConditionProps & ConditionTypes> = ({
   condition,
   is,
   when,
-  resetOnFalse = false
+  resetOnFalse = true
 }) => {
   return (
     <Field name={when}>
@@ -28,13 +28,15 @@ const Condition: React.FC<ConditionProps & ConditionTypes> = ({
           return (
             resetOnFalse &&
             React.Children.map(children, (child: React.ReactElement) => {
-              return (
+              return child.props.name ? (
                 <Field name={child.props.name}>
                   {({ input: { onChange } }) => {
                     onChange(undefined);
                     return null;
                   }}
                 </Field>
+              ) : (
+                child
               );
             })
           );

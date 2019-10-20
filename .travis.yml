@@ -24,6 +24,7 @@ deploy:
     keep_history: true
     on:
       branch: master
+      tags: false
   - provider: npm
     name: npm
     email: $NPM_EMAIL

@@ -19,58 +19,26 @@ export const ConditionExample = () => {
         render={({ values }) => {
           return (
             <>
+              <Field name="fullname" labelText="Full name" required />
               <Field
-                name="housename"
+                name="age"
+                type="number"
+                labelText="Age"
                 required
+                hint="Driving license required for adults (age > 18)"
+              />
+              <Field
+                name="gender"
                 fieldType="dropdown"
-                labelText="Which is your favorite house?"
+                labelText="Gender"
                 options={[
-                  { text: "Stark", value: "stark" },
-                  { text: "Lannister", value: "lannister" },
-                  { text: "Baratheon", value: "baratheon" }
+                  { text: "Male", value: "male" },
+                  { text: "Female", value: "female" }
                 ]}
                 selection
               />
-              <Condition when="housename" is="stark">
-                <Field
-                  name="favouriteChar"
-                  fieldType="dropdown"
-                  labelText="Who is your favourite Stark"
-                  options={[
-                    { text: "Arya", value: "arya" },
-                    { text: "Sansa", value: "sansa" },
-                    { text: "Bran", value: "bran" },
-                    { text: "Rob", value: "rob" },
-                    { text: "Edarrd", value: "ed" }
-                  ]}
-                  selection
-                />
-              </Condition>
-              <Condition when="housename" is="lannister">
-                <Field
-                  name="favouriteChar"
-                  fieldType="dropdown"
-                  labelText="Who is your favourite Lannister"
-                  options={[
-                    { text: "Tyrion", value: "tyrion" },
-                    { text: "Jaime", value: "jaime" },
-                    { text: "Cersie", value: "cersie" }
-                  ]}
-                  selection
-                />
-              </Condition>
-              <Condition when="housename" is="baratheon">
-                <Field
-                  name="favouriteChar"
-                  fieldType="dropdown"
-                  labelText="Who is your favourite Baratheon"
-                  options={[
-                    { text: "Robert", value: "robert" },
-                    { text: "Stannis", value: "stannis" },
-                    { text: "Gendry", value: "gendry" }
-                  ]}
-                  selection
-                />
+              <Condition when="age" condition={value => value > 18}>
+                <Field name="licenseNo" labelText="Driving license Number" />
               </Condition>
               <ValuesComponent values={values} />
             </>

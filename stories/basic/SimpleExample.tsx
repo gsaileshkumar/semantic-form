@@ -19,7 +19,12 @@ export const SimpleForm = () => {
         render={({ values }) => {
           return (
             <>
-              <Field name="firstname" labelText="First name" required />
+              <Field
+                name="firstname"
+                labelText="First name"
+                required
+                hint="Required"
+              />
               <Field name="lastname" labelText="Last name" />
               <Field name="age" type="number" labelText="Age" required />
               <Field

@@ -4,6 +4,7 @@ import { FieldProps } from "react-final-form";
 import { Errors } from "./constants";
 import { DEFAULT_FIELD_STYLE } from "./constants/DefaultStyles";
 import RadioGroup from "./fieldTypes/RadioGroup";
+import Error from "./Error";
 
 type ValueType = boolean | number | string | (boolean | number | string)[];
 
@@ -19,6 +20,7 @@ export interface GenericFieldProps {
   required?: boolean;
   readOnly?: boolean;
   labelText?: string;
+  hint?: string;
 }
 
 interface GenericFormFieldProps
@@ -39,7 +41,7 @@ const isEmpty = (value: ValueType) => {
 };
 
 const Field: FieldComponent = props => {
-  const { fieldType, required, validate, labelText } = props;
+  const { fieldType, required, validate, labelText, hint, name } = props;
   const fieldValidate = (value, allValues) => {
     if (required && isEmpty(value)) {
       return Errors.REQUIRED;
@@ -66,6 +68,8 @@ const Field: FieldComponent = props => {
         {required ? " :*" : " :"}
       </label>
       {fieldComp}
+      <span style={{ color: "#adadad" }}>{hint}</span>
+      <Error name={name} />
     </div>
   );
 };

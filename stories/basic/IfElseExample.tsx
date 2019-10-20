@@ -20,10 +20,10 @@ export const IfElseExample = () => {
           return (
             <>
               <Field
-                name="isArya"
+                name="hasAccount"
                 required
                 fieldType="radio"
-                labelText="Continue your game as Arya?"
+                labelText="Already have account?"
                 options={[
                   { text: "Yes", value: true },
                   { text: "No", value: false }
@@ -31,19 +31,40 @@ export const IfElseExample = () => {
                 selection
               />
               <IfElse
-                when="isArya"
+                when="hasAccount"
                 is
                 renderOnTrue={
                   <>
+                    <h2>Login here</h2>
+                    <Field name="username" labelText="Username" />
                     <Field
-                      name="location"
-                      labelText="Whom do you want to disguise?"
+                      name="password"
+                      labelText="Password"
+                      type="password"
                     />
                   </>
                 }
                 renderOnFalse={
                   <>
-                    <Field name="character" labelText="Continue As?" />
+                    <h2>Signup here</h2>
+                    <Field
+                      name="firstname"
+                      labelText="First name"
+                      required
+                      hint="Required"
+                    />
+                    <Field name="lastname" labelText="Last name" />
+                    <Field name="age" type="number" labelText="Age" required />
+                    <Field
+                      name="gender"
+                      fieldType="dropdown"
+                      labelText="Gender"
+                      options={[
+                        { text: "Male", value: "male" },
+                        { text: "Female", value: "female" }
+                      ]}
+                      selection
+                    />
                   </>
                 }
               />
