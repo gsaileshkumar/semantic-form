@@ -70,7 +70,7 @@ Props you may want to specify include:
 #### Field
 
 - `required` - Checks the field for mandatory
-- `fieldType` - Type of the field. Supports Text, Dropdown, Radio \*\*In Development to support other types
+- `fieldType` - Type of the field.
 - `labelText` - Label for the field
 - `hint` - Hint text for the field
 
@@ -79,5 +79,13 @@ Props you may want to specify include:
 - `when` - Name of the field to be checked for
 - `is` - Value to compare with
 - `condition` - A callback to check for the condition on which the children is rendered
+
+#### IfElse
+
+- `when` - Name of the field to be checked for
+- `is` - Value to compare with
+- `condition` - A callback to check for the condition on which the children is rendered
+- `renderOnTrue` - JSX to be rendered if the condition is satisfied
+- `renderOnFalse` - JSX to be rendered if the condition is NOT satisfied
 
 WORK IN PROGRESS

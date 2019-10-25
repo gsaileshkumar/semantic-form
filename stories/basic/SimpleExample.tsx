@@ -37,6 +37,17 @@ export const SimpleForm = () => {
                 ]}
                 selection
               />
+              <Field
+                name="preferredLocation"
+                fieldType="checkbox"
+                labelText="Preferred Location"
+                options={[
+                  { text: "Singapore", value: "sg" },
+                  { text: "India", value: "in" },
+                  { text: "United States", value: "us" }
+                ]}
+                selection
+              />
               <ValuesComponent values={values} />
             </>
           );

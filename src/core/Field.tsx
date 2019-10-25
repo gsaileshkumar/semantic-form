@@ -1,5 +1,5 @@
 import React from "react";
-import { Dropdown, Input, Radio } from "./fieldTypes";
+import { Dropdown, Input, Radio, Checkbox } from "./fieldTypes";
 import { FieldProps } from "react-final-form";
 import { Errors } from "./constants";
 import { DEFAULT_FIELD_STYLE } from "./constants/DefaultStyles";
@@ -7,7 +7,7 @@ import Error from "./Error";
 
 type ValueType = boolean | number | string | (boolean | number | string)[];
 
-type FieldTypes = "radio" | "dropdown" | "text";
+type FieldTypes = "radio" | "dropdown" | "checkbox" | "text";
 
 interface AnyObject {
   [key: string]: any;
@@ -56,6 +56,9 @@ const Field: FieldComponent = props => {
       break;
     case "radio":
       fieldComp = <Radio validate={fieldValidate} {...props} />;
+      break;
+    case "checkbox":
+      fieldComp = <Checkbox validate={fieldValidate} {...props} />;
       break;
     case "text":
     default:
