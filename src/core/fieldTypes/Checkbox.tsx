@@ -6,7 +6,7 @@ interface CheckboxGroupProps extends Omit<CheckboxProps, "type"> {
   direction?: "vertical" | "horizontal";
 }
 
-type CheckboxFieldType = React.FunctionComponent<CheckboxGroupProps>;
+type CheckboxFieldType = React.FC<CheckboxGroupProps>;
 
 const CheckboxField: CheckboxFieldType = ({
   options,

@@ -4,7 +4,7 @@ import { Dropdown, DropdownProps } from "semantic-ui-react";
 
 interface DropdownGroupProps extends DropdownProps {}
 
-type DropdownGroupType = React.FunctionComponent<DropdownGroupProps>;
+type DropdownGroupType = React.FC<DropdownGroupProps>;
 
 const DropdownGroup: DropdownGroupType = ({
   name,

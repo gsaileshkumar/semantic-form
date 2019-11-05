@@ -6,7 +6,7 @@ interface RadioGroupProps extends Omit<RadioProps, "type"> {
   direction?: "vertical" | "horizontal";
 }
 
-type RadioGroupType = React.FunctionComponent<RadioGroupProps>;
+type RadioGroupType = React.FC<RadioGroupProps>;
 
 const RadioField = ({ options, value, direction, ...rest }) => {
   return (

@@ -1,23 +1,23 @@
 import React from "react";
-import { Input, InputProps, InputOnChangeData } from "semantic-ui-react";
+import { TextArea, TextAreaProps } from "semantic-ui-react";
 import { Field } from "react-final-form";
 
-interface InputGroupProps extends InputProps {}
+interface TextAreaGroupProps extends Omit<TextAreaProps, "value"> {}
 
-type InputGroupType = React.FC<InputGroupProps>;
+type TextAreaGroupType = React.FC<TextAreaGroupProps>;
 
-const InputGroup: InputGroupType = ({ name, readOnly, onChange, ...rest }) => {
+const TextAreaGroup: TextAreaGroupType = ({ name, ...rest }) => {
   return (
     <Field {...rest} name={name}>
       {({ input, meta, ...others }) => {
         const onChangeHandler = (
-          e: React.ChangeEvent<HTMLInputElement>,
-          data: InputOnChangeData
+          event: React.FormEvent<HTMLTextAreaElement>,
+          data: TextAreaProps
         ) => {
           input.onChange(data.value);
         };
         return (
-          <Input
+          <TextArea
             {...others}
             {...input}
             onChange={onChangeHandler}
@@ -29,4 +29,4 @@ const InputGroup: InputGroupType = ({ name, readOnly, onChange, ...rest }) => {
   );
 };
 
-export default InputGroup;
+export default TextAreaGroup;

@@ -38,6 +38,15 @@ export const SimpleForm = () => {
                 selection
               />
               <Field
+                name="citizen"
+                fieldType="radio"
+                labelText="Are you a citizen?"
+                options={[
+                  { text: "Yes", value: true },
+                  { text: "No", value: false }
+                ]}
+              />
+              <Field
                 name="preferredLocation"
                 fieldType="checkbox"
                 labelText="Preferred Location"
@@ -47,6 +56,13 @@ export const SimpleForm = () => {
                   { text: "United States", value: "us" }
                 ]}
                 selection
+              />
+              <Field
+                name="address"
+                required
+                labelText="Address"
+                fieldType="textarea"
+                hint="Please include pincode"
               />
               <ValuesComponent values={values} />
             </>

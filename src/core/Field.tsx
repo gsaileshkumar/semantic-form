@@ -1,35 +1,49 @@
 import React from "react";
-import { Dropdown, Input, Radio, Checkbox } from "./fieldTypes";
-import { FieldProps } from "react-final-form";
+import { Dropdown, Input, Radio, Checkbox, TextArea } from "./fieldTypes";
 import { Errors } from "./constants";
 import { DEFAULT_FIELD_STYLE } from "./constants/DefaultStyles";
 import Error from "./Error";
 
-type ValueType = boolean | number | string | (boolean | number | string)[];
-
-type FieldTypes = "radio" | "dropdown" | "checkbox" | "text";
+type FieldType =
+  | {
+      fieldType?: "text";
+      value?: string;
+    }
+  | {
+      fieldType?: "textarea";
+      value?: string | number;
+    }
+  | {
+      fieldType?: "radio";
+      value?: string | number;
+    }
+  | {
+      fieldType?: "dropdown";
+      value?: boolean | number | string | (boolean | number | string)[];
+    }
+  | {
+      fieldType?: "checkbox";
+      value?: (boolean | number | string)[];
+    };
 
 interface AnyObject {
   [key: string]: any;
 }
 
-export interface GenericFieldProps {
+export interface GenericFieldProps extends AnyObject {
   name: string;
-  fieldType?: FieldTypes;
   required?: boolean;
   readOnly?: boolean;
   labelText?: string;
   hint?: string;
+  validate?: (value, allValues) => string | boolean;
 }
 
-interface GenericFormFieldProps
-  extends FieldProps<ValueType, HTMLElement>,
-    GenericFieldProps,
-    AnyObject {}
+type FieldComponent = React.FC<GenericFieldProps & FieldType>;
 
-type FieldComponent = React.FC<GenericFormFieldProps>;
-
-const isEmpty = (value: ValueType) => {
+const isEmpty = (
+  value: boolean | number | string | (boolean | number | string)[]
+) => {
   if (value === null || value === undefined) {
     return true;
   }
@@ -59,6 +73,9 @@ const Field: FieldComponent = props => {
       break;
     case "checkbox":
       fieldComp = <Checkbox validate={fieldValidate} {...props} />;
+      break;
+    case "textarea":
+      fieldComp = <TextArea validate={fieldValidate} {...props} />;
       break;
     case "text":
     default:
