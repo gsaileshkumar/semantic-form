@@ -35,14 +35,12 @@
     "url": "https://github.com/gsaileshkumar/semantic-form/issues"
   },
   "homepage": "https://gsaileshkumar.github.io/semantic-form",
-  "dependencies": {
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
     "final-form": "^4.18.5",
     "react-final-form": "^6.3.0",
     "semantic-ui-react": "^0.88.1"
-  },
-  "peerDependencies": {
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
