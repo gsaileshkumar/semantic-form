@@ -1,14 +1,15 @@
 import React, { ReactElement } from "react";
 import { Field } from "react-final-form";
+import { GenericFieldProps } from "./Field";
 
 interface ConditionProps {
   when: string;
-  children: ReactElement;
+  children: ReactElement<GenericFieldProps> | ReactElement<GenericFieldProps>[];
   resetOnFalse?: boolean;
 }
 
 export interface ConditionTypes {
-  condition?: (value: any) => Boolean;
+  condition?: (value: any) => boolean;
   is?: any;
 }
 

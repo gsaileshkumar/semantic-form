@@ -4,27 +4,7 @@ import { Errors } from "./constants";
 import { DEFAULT_FIELD_STYLE } from "./constants/DefaultStyles";
 import Error from "./Error";
 
-type FieldType =
-  | {
-      fieldType?: "text";
-      value?: string;
-    }
-  | {
-      fieldType?: "textarea";
-      value?: string | number;
-    }
-  | {
-      fieldType?: "radio";
-      value?: string | number;
-    }
-  | {
-      fieldType?: "dropdown";
-      value?: boolean | number | string | (boolean | number | string)[];
-    }
-  | {
-      fieldType?: "checkbox";
-      value?: (boolean | number | string)[];
-    };
+type FieldTypes = "radio" | "dropdown" | "text" | "textarea" | "checkbox";
 
 interface AnyObject {
   [key: string]: any;
@@ -32,19 +12,22 @@ interface AnyObject {
 
 export interface GenericFieldProps extends AnyObject {
   name: string;
+  fieldType?: FieldTypes;
   required?: boolean;
   readOnly?: boolean;
   labelText?: string;
   hint?: string;
   validate?: (value, allValues) => string | boolean;
+  children?: null;
+  type?: string;
 }
 
-type FieldComponent = React.FC<GenericFieldProps & FieldType>;
+type FieldComponent = React.FC<GenericFieldProps>;
 
 const isEmpty = (
   value: boolean | number | string | (boolean | number | string)[]
 ) => {
-  if (value === null || value === undefined) {
+  if (value === "" || value === null || value === undefined) {
     return true;
   }
   if (Array.isArray(value) && value.length === 0) {
