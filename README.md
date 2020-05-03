@@ -13,6 +13,9 @@ See [semantic-form](https://gsaileshkumar.github.io/semantic-form) for live exam
 The easiest way to use semantic-form is to install it from npm and build it into your app with bundler of your choice.
 
 ```
+// Install peer dependencies first,
+npm i final-form react-final-form semantic-ui-react
+
 npm i semantic-form
 ```
 
